@@ -135,7 +135,7 @@ class App(tk.Frame):
                 pyautogui.press('enter')
 
                 # Wait for the world to load before capturing the screenshot
-                time.sleep(3)  # Adjust the duration based on the world loading time
+                time.sleep(3)  # Adjust the duration based on the average world loading time in your location (depends on latency & wifi speed)
 
                 # Capture the whole screen
                 screenshot = pyautogui.screenshot()
@@ -168,9 +168,12 @@ class App(tk.Frame):
                 # Use pytesseract to extract text from the specific area of the screen
                 extracted_text3 = ocr_screen_text()
 
+                # Reason we take 3 screenshots is to improve OCR accuracy
+                # 1 Screenshot leaves room for the OCR to not read a letter properly, or make a mistake
+                # 3 Screenshots significantly reduce that chance
                 extracted_text = extracted_text3 + extracted_text2 + extracted_text1
 
-                # If the extracted text contains "World Locked by," report the world as taken (Class 1)
+                # If the extracted text contains "Locked" report the world as taken (Class 1)
                 if "locked" in extracted_text or "Locked" in extracted_text:
                     predicted_class = 1
                 else:
@@ -193,6 +196,8 @@ class App(tk.Frame):
             self.listener.stop()
             print("Macro stopped.")
 
+    # Function to go over worlds inside txt file to double check they are not false positives
+    # Works but still has some bugs. Wouldn't recommend using this function if you are going to have a lot of iterations
     def double_check(self):
         updated_worlds = []
         with open("unseen_worlds.txt", "a") as file:
@@ -259,7 +264,7 @@ class App(tk.Frame):
 
                     pyautogui.click(2443, 117)
                     time.sleep(0.2)
-                    pyautogui.click(1328, 252)  # Replace with your X and Y coordinates
+                    pyautogui.click(1328, 252)
                     time.sleep(0.1)
 
                     # If the world is not taken (Class 0) or locked, save the last world name to the text file
@@ -280,6 +285,6 @@ class App(tk.Frame):
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("Growtopia World Finder v1.4")
+    root.title("Growtopia World Finder v2.4")
     app = App(master=root)
     app.mainloop()
