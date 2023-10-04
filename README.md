@@ -11,6 +11,7 @@ Later versions utilize Neural Networks such as **CNN's and Optical Character Rec
 The program is still in early stages so expect bugs; however, if you would like to contribute to this project or have any feedback feel free to do so.
 
 Known Issues:
+
 False Positives with OCR (30% on average)
 
 False Positives with CNN (over 60% - moved to OCR since using CNN needed too much data and I didn't have the patience to collect it...)
