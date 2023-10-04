@@ -20,3 +20,14 @@ Pause Function (pause the program by pressing 'pause' on your keyboard) is broke
 
 Server Latency can break the entire script currently (This is because it is built to play the game as a normal user, does not interact with game files like cheat engines - good for not getting banned, not good to keep script running for a long time) Note: If you know how to make this script interact with the game directly like a cheat engine, please reach out to me to discuss collaborating on this!)
 
+Future Plans:
+
+Fixing False Positives in OCR
+
+Fixing Pause Function
+
+Packaging scripts into .exe files for easier use by everyone
+
+Making a video to demonstrate how to use program
+
+Fixing break due to Latency to increase reliability (will need collaborator who knows how to make script interact directly with the game)
