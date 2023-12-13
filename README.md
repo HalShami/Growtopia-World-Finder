@@ -1,5 +1,5 @@
 # Growtopia-World-Finder
-This is was my AP CSP Create Performance Task (got a 5 :D) and then transitioned to be my Sophomore year of High School's summer project basically... (Note for college admission officers, devs can ignore this)
+This is was my AP CSP Create Performance Task (got a 5 :D) and then transitioned to be my Sophomore year of High School's summer project basically... 
 
 This program is **designed to search for worlds in the game Growtopia**. You can specify the length of the world name, and the number of iterations (worlds to search) you want to perform. 
 Depending on which version of the code you run, each iteration can take from 5(basic GUI version with no AI detection) to 15 seconds (OCR version with 3 screenshots to increase accuracy). 
